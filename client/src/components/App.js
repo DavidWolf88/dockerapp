@@ -48,7 +48,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>{this.state.message || 'No message'}</p>
+        <p>{this.state.message || 'No message,i meant,all of the messages'}</p>
+        <p> I can add another line and save!</p>
+        <p> And another one!</p>
       </div>
     );
   }
