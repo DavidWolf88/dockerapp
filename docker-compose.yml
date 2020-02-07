@@ -10,15 +10,15 @@ services:
       APP_SERVER_PORT: ${APP_SERVER_PORT}
     ports:
       - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
-#    networks:
-#      - react
+    networks:
+      - react
     volumes:
       - ./server/src:/app/server/src
     command: npm start
   client:
     build: ./client
     environment:
-      - REACT_APP_PORT=${REACT_APP_PORT}
+      REACT_APP_PORT: ${REACT_APP_PORT}
     expose:
       - ${REACT_APP_PORT}
     ports:
@@ -27,12 +27,10 @@ services:
       - ./client/src:/app/client/src
       - ./client/src/components:/app/client/src/components
       - ./client/public:/app/client/public
-#    networks:
-#      - react
-    links:
-      - server
+    networks:
+      - react
     command: npm run start
 
-#networks:
-#  react:
-#    driver: bridge
+networks:
+  react:
+    driver: bridge

@@ -10,7 +10,6 @@ COPY package*.json /app/client/
 
 #running npm install
 RUN npm install
-RUN npm run build
 
 #copying all files into workdir
 COPY . /app/client
